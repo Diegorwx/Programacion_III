@@ -6,6 +6,9 @@ Módulo que muestra un CRUD básico y otras funciones, para listas en Elixir
 - licencia: GNU GPL v3
 """
 
+  #Constantes
+  @pi 3.1416
+
   # CRUD de lista
   def agregar(lista, elemento) do
     Util.agregar(lista, elemento)

@@ -37,4 +37,7 @@ defmodule ListasElixir do
   # Número de elementos
   length(["a", "b", "c", "d"])
 
+
+
+  
 end
