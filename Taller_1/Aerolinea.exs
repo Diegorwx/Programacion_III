@@ -2,7 +2,7 @@ defmodule Aerolinea do
   @moduledoc """
   Modulo que calcula el costo de un tiquete aereo con cargos opcionales.
   - autor: Diego Alejandro Florez Serna
-  - fecha: 01/03/2026
+  - fecha: 02/03/2026
   - licencia: GNU GPL v3
   """
 

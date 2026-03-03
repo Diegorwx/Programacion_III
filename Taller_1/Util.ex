@@ -17,9 +17,7 @@ defmodule Util do
     IO.puts(:standard_error, mensaje)
   end
 
-
   # INGRESO DE DATOS
-
 
   def ingresar(mensaje, :texto) do
     mensaje
@@ -57,9 +55,7 @@ defmodule Util do
     end
   end
 
-
   ### FUNCIONES PARA LISTAS (CRUD) ###
-
 
   # CREATE
   def agregar(lista, elemento) do
@@ -94,4 +90,8 @@ defmodule Util do
     Enum.member?(lista, elemento)
   end
 
+  def obtener_hora do
+    {{_, _, _}, {hora, _, _}} = :calendar.local_time()
+    hora
+  end
 end

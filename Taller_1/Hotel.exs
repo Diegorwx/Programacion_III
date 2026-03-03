@@ -2,7 +2,7 @@ defmodule HotelCosto do
   @moduledoc """
   Modulo que calcula el costo de reserva de un hotel
   - autor: Diego Alejandro Flórez Serna
-  - fecha: 28/02/2026
+  - fecha: 03/03/2026
   - licencia: GNU GPL v3
   """
 
@@ -70,14 +70,21 @@ defmodule HotelCosto do
   def tarifa_base(noches) when noches > 5, do: 85_000
 
   # descuento por tipo de cliente con atomos y pattern matching
-  defp convertir_a_atomo("frecuente"), do: :frecuente
-  defp convertir_a_atomo("corporativo"), do: :corporativo
-  defp convertir_a_atomo("ocasional"), do: :ocasional
-  defp convertir_a_atomo(_), do: :invalido
+  def convertir_a_atomo("frecuente"), do: :frecuente
+  def convertir_a_atomo("corporativo"), do: :corporativo
+  def convertir_a_atomo("ocasional"), do: :ocasional
 
-  def descuento_cliente(:frecuente, subtotal), do: subtotal * 0.20
-  def descuento_cliente(:corporativo, subtotal), do: subtotal * 0.15
-  def descuento_cliente(:ocasional, _subtotal), do: 0
+  def descuento_cliente(:frecuente, subtotal) do
+    subtotal * 0.20
+  end
+
+  def descuento_cliente(:corporativo, subtotal) do
+    subtotal * 0.15
+  end
+
+  def descuento_cliente(:ocasional, _subtotal) do
+    0
+  end
 
   # recargo por temporada
   def recargo_temporada(temporada, subtotal) do

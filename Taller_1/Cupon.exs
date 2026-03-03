@@ -2,7 +2,7 @@ defmodule ValidadorCupon do
   @moduledoc """
   Módulo que valida un código de cupón promocional
   - autor: Diego Alejandro Flórez Serna
-  - fecha: 01/03/2026
+  - fecha: 03/03/2026
   - licencia: GNU GPL v3
   """
 
