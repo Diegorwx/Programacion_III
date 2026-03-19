@@ -5,6 +5,7 @@ defmodule ValidadorCupon do
   - fecha: 03/03/2026
   - licencia: GNU GPL v3
   """
+  
 
   def main do
     cupon =
