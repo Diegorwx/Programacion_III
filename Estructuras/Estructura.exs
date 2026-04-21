@@ -2,9 +2,6 @@ defmodule Estructura do
   def main do
     "\nIngrese los datos del cliente: "
     |> Cliente.ingresar(:clientes)
-    |> Cliente.generar_mensaje_clientes(&generar_mensaje/1)
-    |> Util.mostrar_mensaje()
-    crear_lista_clientes()
     |> Cliente.escribir_csv("clientes.csv")
   end
 
@@ -15,12 +12,20 @@ defmodule Estructura do
       "tienes una altura de #{altura}\n"
   end
 
+  defp generar_mensaje_clientes(lista_clientes) do
+    lista_clientes
+    |> Enum.map(&generar_mensaje/1)
+    |> Enum.join()
+  end
+
   defp crear_lista_clientes do
     [
       Cliente.crear("Ana", 16, 1.70),
       Cliente.crear("Juan", 20, 1.72),
-      Cliente.crear("Diana", 48, 1.80),
-      Cliente.crear("Ana", 28, 1.70)
+      Cliente.crear("Diana", 48, 1.71),
+      Cliente.crear("Julian", 51, 1.83),
+      Cliente.crear("Isabella", 6, 1.00),
+      Cliente.crear("Sara", 8, 1.30)
     ]
   end
 end
