@@ -5,19 +5,14 @@ defmodule Estructura do
     |> Cliente.escribir_csv("clientes.csv")
   end
 
-  defp generar_mensaje(cliente) do
+  def generar_mensaje(cliente) do
     altura = cliente.altura |> Float.round(2)
 
     "Hola #{cliente.nombre}, tu edad es de #{cliente.edad} años y " <>
       "tienes una altura de #{altura}\n"
   end
 
-  defp generar_mensaje_clientes(lista_clientes) do
-    lista_clientes
-    |> Enum.map(&generar_mensaje/1)
-    |> Enum.join()
-  end
-
+  
   defp crear_lista_clientes do
     [
       Cliente.crear("Ana", 16, 1.70),

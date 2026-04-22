@@ -24,11 +24,13 @@ defmodule Cliente do
     crear(nombre, edad, altura)
   end
 
+  #
   def ingresar(mensaje, :clientes) do
     mensaje
     |> ingresar([], :clientes)
   end
 
+  #
   defp ingresar(mensaje, lista, :clientes) do
     cliente =
       mensaje
@@ -50,24 +52,24 @@ defmodule Cliente do
     end
   end
 
-
+  
   def escribir_csv(clientes, nombre) do
     clientes
     |> generar_mensaje_clientes(&convertir_cliente_linea_csv/1)
-    > (&("\nnombre, edad, altura\n"<> &1)).() # adiciona los títulos
-    #|> (fn datos -> "nombre, edad, altura \n" <> datos end).()
-    # escribe el archivo
-    |> (&File.write(nombre, &1, [:append])).()
+    # adiciona los títulos
+    |> (&("nombre, edad, altura\n" <> &1)).()
+    |> (&File.write(nombre, &1)).()
   end
 
+
   defp convertir_cliente_linea_csv(cliente) do
-    "\n -#{cliente.nombre} ,#{cliente.edad} , #{cliente.altura}; "
+    "#{cliente.nombre},#{cliente.edad}, #{cliente.altura}"
   end
 
 
   def generar_mensaje_clientes(lista_clientes, parser) do
     lista_clientes
     |> Enum.map(parser)
-    |> Enum.join()
+    |> Enum.join("\n")
   end
 end
