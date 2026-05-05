@@ -2,7 +2,7 @@ defmodule Parqueadero do
   def main do
     semaforo = spawn(fn -> semaforo(0) end)
 
-    for i <- 1..15 do
+    for i <- 1..12 do
       spawn(fn -> carro(semaforo, i) end)
     end
 

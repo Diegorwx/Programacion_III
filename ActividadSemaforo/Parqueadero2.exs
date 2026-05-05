@@ -25,7 +25,7 @@ defmodule Parqueadero2 do
     :timer.sleep(2000)
   end
 
-  # INICIAR PROCESO
+  # INICIAR PROCESO()
 
   def iniciar(capacidad) do
     spawn(fn -> loop(capacidad, [], []) end)
