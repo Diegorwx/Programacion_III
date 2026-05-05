@@ -7,7 +7,7 @@ defmodule Parqueadero do
       Process.sleep(200)
     end
 
-    # Dar tiempo a que todos los carros terminen
+    # Dar tiempo a que todos los carros terminen de ingresar
     Process.sleep(20_000)
   end
 
